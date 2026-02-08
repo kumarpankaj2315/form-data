@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   title = 'form-app';
   userForm: FormGroup;
   userName: string = 'Pankaj Kumar';
+  lastName: string = 'Something';
   userData: string = '';
   userEnterEvent = new Subject();
   temperature: Number = 0;
