@@ -1,6 +1,11 @@
 <div class="">
   <h2>User Form</h2>
-  <div class="" [formGroup]="userForm">
+  <input
+    type="text"
+    [(ngModel)]="userData"
+    (input)="userEnterEvent.next(userData)"
+  />
+  <!-- <div class="" [formGroup]="userForm">
     <div class="">
       <label>Name</label>
       <input type="text" formControlName="name" />
@@ -17,7 +22,7 @@
     </div>
     <div class="">
       <label>Mobile</label>
-      <input type="number" formControlName="mobile" />
+      <input type="text" formControlName="mobile" />
     </div>
     <div class="">
       <label>Address</label>
@@ -37,9 +42,28 @@
     </div>
     <button
       (click)="submitForm()"
-      [disabled]="!userForm.valid || !userForm.value['consent']"
+      [disabled]="
+        !userForm.valid ||
+        !userForm.value['consent'] ||
+        userForm.value['consent'] == 'null'
+      "
     >
       Submit
     </button>
+  </div> -->
+  <div class="">
+    <h3>Weather report</h3>
+    <title>Temperature</title>
+    <input
+      class=""
+      type="number"
+      [(ngModel)]="temperature"
+      (input)="tempreatureSubject.next(temperature)"
+    />
+    <title>Type</title>
+    <select (change)="onOptionsSelected(myselect.value)" #myselect>
+      <option value="c">C</option>
+      <option value="f">F</option>
+    </select>
   </div>
 </div>
