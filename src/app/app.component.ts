@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   userName: string = 'Pankaj Kumar';
   lastName: string = 'Something';
   userData: string = '';
+  baseURL = 'https://jsonplaceholder.typicode.com/users';
   userEnterEvent = new Subject();
   temperature: Number = 0;
   selectedType = new Subject();
